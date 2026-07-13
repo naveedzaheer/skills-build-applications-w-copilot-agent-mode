@@ -14,11 +14,11 @@ const users_1 = __importDefault(require("./routes/users"));
 const workouts_1 = __importDefault(require("./routes/workouts"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
-const port = Number(process.env.PORT) || 8000;
+const port = 8000;
 const codespaceName = process.env.CODESPACE_NAME;
 const baseUrl = codespaceName
-    ? `https://${codespaceName}-${port}.app.github.dev`
-    : `http://localhost:${port}`;
+    ? `https://${codespaceName}-8000.app.github.dev`
+    : 'http://localhost:8000';
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 app.get('/api/', (_req, res) => {
