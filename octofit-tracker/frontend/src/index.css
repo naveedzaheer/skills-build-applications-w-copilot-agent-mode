@@ -1,0 +1,34 @@
+:root {
+  font: 16px/1.5 Avenir, Montserrat, Corbel, sans-serif;
+  color: #1d2e29;
+  background: #f6f4ed;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #10231f;
+  font-weight: 800;
+}
+
+code {
+  padding: 3px 6px;
+  border-radius: 6px;
+  font-size: 13px;
+}
