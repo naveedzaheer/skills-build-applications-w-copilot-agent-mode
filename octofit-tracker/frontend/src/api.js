@@ -1,8 +1,20 @@
 const codespaceName = import.meta.env.VITE_CODESPACE_NAME
 
+function getCodespacesApiBaseUrl() {
+  if (codespaceName) {
+    return `https://${codespaceName}-8000.app.github.dev/api`
+  }
+
+  if (typeof window !== 'undefined' && window.location.hostname.endsWith('.app.github.dev')) {
+    return `https://${window.location.hostname.replace('-5173.app.github.dev', '-8000.app.github.dev')}/api`
+  }
+
+  return 'http://localhost:8000/api'
+}
+
 export const apiBaseUrl = codespaceName
   ? `https://${codespaceName}-8000.app.github.dev/api`
-  : 'http://localhost:8000/api'
+  : getCodespacesApiBaseUrl()
 
 export function normalizeCollectionResponse(payload) {
   if (Array.isArray(payload)) {
